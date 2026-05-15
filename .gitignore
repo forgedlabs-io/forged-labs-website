@@ -40,5 +40,6 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
-# local design exports (raw drops from Claude design — not for repo)
-/Claude_Design/
+# local design exports — track the raw drops but keep the per-export
+# CLAUDE.md out (it's a stub meant for the repo root, not the archive)
+/Claude_Design/**/CLAUDE.md

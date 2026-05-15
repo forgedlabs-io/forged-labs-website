@@ -1,0 +1,505 @@
+/* ============================================================
+   Forged Labs — globals.css
+   Tailwind v4 + Obsidian & Sapphire palette + landing styles.
+   See CLAUDE.md for the full design decision log.
+   ============================================================ */
+
+@import "tailwindcss";
+
+/* === DESIGN TOKENS — Obsidian & Sapphire ===
+   These are exposed as Tailwind theme tokens AND as raw CSS variables,
+   so the landing styles below can reference them directly. */
+:root {
+  --fl-surface: #0a0b10;
+  --fl-surface-raised: #13151c;
+  --fl-surface-deeper: #06070b;
+
+  --fl-text-primary: #eceef4;
+  --fl-text-secondary: #9099aa;
+  --fl-text-muted: #5c6373;
+  --fl-text-faint: #3a404c;
+
+  --fl-accent: #5a86e8;
+  --fl-accent-hover: #4470d2;
+
+  --fl-border-subtle: rgba(236, 238, 244, 0.08);
+  --fl-border-soft: rgba(236, 238, 244, 0.12);
+  --fl-border-strong: rgba(236, 238, 244, 0.18);
+
+  --fl-radius: 12px;
+}
+
+@theme inline {
+  --color-surface: var(--fl-surface);
+  --color-surface-raised: var(--fl-surface-raised);
+  --color-surface-deeper: var(--fl-surface-deeper);
+  --color-text-primary: var(--fl-text-primary);
+  --color-text-secondary: var(--fl-text-secondary);
+  --color-text-muted: var(--fl-text-muted);
+  --color-text-faint: var(--fl-text-faint);
+  --color-accent: var(--fl-accent);
+  --color-accent-hover: var(--fl-accent-hover);
+}
+
+/* === BASE === */
+html,
+body {
+  background: var(--fl-surface);
+  color: var(--fl-text-primary);
+  font-family: var(--font-sans), -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+body {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+/* === ROOT WRAPPER === */
+.fl-root {
+  background: var(--fl-surface);
+  color: var(--fl-text-primary);
+  min-height: 100vh;
+  width: 100%;
+}
+
+.fl-container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 56px;
+}
+
+/* === MASTHEAD ===
+   Wordmark reads as the page's nameplate — first thing the eye lands on,
+   sitting above the hero with a thin rule. Level 2 prominence (see CLAUDE.md). */
+.fl-nav {
+  padding: 40px 0 18px;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  border-bottom: 0.5px solid var(--fl-border-subtle);
+}
+.fl-nav-mark {
+  font-weight: 600;
+  font-size: 22px;
+  letter-spacing: 0.20em;
+  text-transform: uppercase;
+  color: var(--fl-text-primary);
+  line-height: 1;
+}
+.fl-nav-meta {
+  font-weight: 400;
+  font-size: 11px;
+  color: var(--fl-text-muted);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-variant-numeric: tabular-nums;
+}
+
+/* === HERO === */
+.fl-hero {
+  padding: 80px 0 88px;
+  border-bottom: 0.5px solid var(--fl-border-subtle);
+}
+.fl-hero-eyebrow {
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: var(--fl-accent);
+  margin-bottom: 32px;
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+}
+.fl-eb-rule {
+  display: inline-block;
+  width: 24px;
+  height: 1px;
+  background: currentColor;
+  opacity: 0.7;
+}
+.fl-hero-wordmark {
+  font-weight: 300;
+  font-size: 88px;
+  letter-spacing: -0.025em;
+  line-height: 0.95;
+  color: var(--fl-text-primary);
+  margin-bottom: 28px;
+}
+.fl-accent-word {
+  font-weight: 400;
+  font-style: italic;
+  font-family: var(--font-serif), Georgia, serif;
+  letter-spacing: -0.015em;
+  color: var(--fl-accent);
+}
+.fl-hero-statement {
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 1.55;
+  color: var(--fl-text-secondary);
+  max-width: 620px;
+  margin-bottom: 52px;
+}
+.fl-hero-meta {
+  display: flex;
+  gap: 48px;
+  flex-wrap: wrap;
+}
+.fl-meta-block {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.fl-meta-label {
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--fl-text-muted);
+}
+.fl-meta-value {
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--fl-text-secondary);
+}
+
+/* === SECTIONS === */
+.fl-section {
+  padding: 88px 0;
+  border-bottom: 0.5px solid var(--fl-border-subtle);
+}
+.fl-section:last-of-type {
+  border-bottom: none;
+}
+
+.fl-section-eyebrow {
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: var(--fl-text-muted);
+  margin-bottom: 32px;
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+}
+.fl-section-eyebrow .fl-eb-rule {
+  width: 18px;
+  background: var(--fl-text-muted);
+  opacity: 0.5;
+}
+.fl-section-number {
+  font-size: 10px;
+  font-weight: 500;
+  color: var(--fl-text-faint);
+  letter-spacing: 0.1em;
+  font-variant-numeric: tabular-nums;
+}
+
+/* === PHILOSOPHY === */
+.fl-philosophy-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.3fr;
+  gap: 72px;
+  align-items: start;
+}
+.fl-philosophy-title {
+  font-family: var(--font-serif), Georgia, serif;
+  font-weight: 400;
+  font-size: 36px;
+  line-height: 1.2;
+  color: var(--fl-text-primary);
+  letter-spacing: -0.015em;
+}
+.fl-philosophy-title em {
+  font-style: italic;
+  font-weight: 400;
+  color: var(--fl-accent);
+}
+.fl-philosophy-body p {
+  font-size: 16px;
+  line-height: 1.75;
+  color: var(--fl-text-secondary);
+  margin-bottom: 22px;
+}
+.fl-philosophy-body p:last-child {
+  margin-bottom: 0;
+}
+.fl-philosophy-body strong {
+  color: var(--fl-text-primary);
+  font-weight: 500;
+}
+
+/* === TWO KINDS OF WORK === */
+.fl-work-intro {
+  font-size: 16px;
+  line-height: 1.7;
+  color: var(--fl-text-secondary);
+  max-width: 520px;
+  margin-bottom: 48px;
+}
+.fl-work-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 28px;
+}
+.fl-work-column {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+.fl-work-label {
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--fl-text-primary);
+}
+.fl-work-blurb {
+  font-family: var(--font-serif), Georgia, serif;
+  font-style: italic;
+  font-weight: 400;
+  font-size: 17px;
+  line-height: 1.5;
+  color: var(--fl-text-secondary);
+}
+
+/* card (filled variant — Obsidian & Sapphire uses cardStyle:'filled') */
+.fl-card {
+  padding: 28px;
+  border-radius: var(--fl-radius);
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  min-height: 220px;
+  background: var(--fl-surface-raised);
+  border: 0.5px solid transparent;
+  transition: border-color 0.4s ease, transform 0.4s ease;
+}
+.fl-card-placeholder {
+  background: var(--fl-surface-deeper);
+  border: 0.5px solid var(--fl-border-subtle);
+}
+
+.fl-product-number {
+  font-family: var(--font-serif), Georgia, serif;
+  font-weight: 300;
+  font-size: 44px;
+  line-height: 1;
+  color: var(--fl-accent);
+  letter-spacing: -0.02em;
+}
+.fl-card-placeholder .fl-product-number {
+  color: var(--fl-text-faint);
+}
+
+.fl-product-name {
+  font-weight: 800;
+  font-size: 22px;
+  letter-spacing: 0.18em;
+  color: var(--fl-text-primary);
+}
+.fl-product-name-muted {
+  color: var(--fl-text-muted);
+}
+
+.fl-product-description {
+  font-size: 14.5px;
+  line-height: 1.6;
+  color: var(--fl-text-secondary);
+}
+.fl-product-description-muted {
+  color: var(--fl-text-muted);
+  font-style: italic;
+}
+
+.fl-product-meta-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: auto;
+}
+.fl-product-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--fl-accent);
+}
+.fl-status-dot {
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--fl-accent);
+  box-shadow: 0 0 8px var(--fl-accent);
+}
+.fl-product-status-muted {
+  color: var(--fl-text-muted);
+}
+.fl-product-status-muted .fl-status-dot {
+  background: var(--fl-text-muted);
+  box-shadow: none;
+}
+
+.fl-product-link {
+  text-decoration: none;
+  color: var(--fl-text-secondary);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: color 0.2s ease;
+}
+.fl-product-link:hover {
+  color: var(--fl-accent);
+}
+.fl-arrow {
+  transition: transform 0.2s ease;
+  display: inline-block;
+}
+.fl-product-link:hover .fl-arrow {
+  transform: translateX(3px);
+}
+
+.fl-future-marker {
+  margin-top: 36px;
+  font-size: 13px;
+  color: var(--fl-text-faint);
+  font-style: italic;
+  letter-spacing: 0.02em;
+  text-align: center;
+}
+
+/* === CONTACT === */
+.fl-contact-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 72px;
+}
+.fl-contact-line {
+  font-family: var(--font-serif), Georgia, serif;
+  font-weight: 400;
+  font-style: italic;
+  font-size: 26px;
+  line-height: 1.4;
+  color: var(--fl-text-primary);
+  letter-spacing: -0.01em;
+}
+.fl-accent-word-inline {
+  color: var(--fl-accent);
+}
+.fl-contact-info {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+.fl-contact-block {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.fl-contact-label {
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--fl-text-muted);
+}
+.fl-contact-value {
+  font-size: 15px;
+  color: var(--fl-text-primary);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+a.fl-contact-value:hover {
+  color: var(--fl-accent);
+}
+
+/* === FOOTER === */
+.fl-footer {
+  padding: 48px 0 40px;
+  border-top: 0.5px solid var(--fl-border-subtle);
+  margin-top: 32px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+.fl-footer-mark {
+  font-weight: 500;
+  font-size: 12px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--fl-text-muted);
+}
+.fl-footer-legal {
+  font-size: 11px;
+  color: var(--fl-text-faint);
+  letter-spacing: 0.04em;
+}
+
+/* === RESPONSIVE === */
+@media (max-width: 768px) {
+  .fl-container {
+    padding: 0 24px;
+  }
+  .fl-hero {
+    padding: 56px 0 64px;
+  }
+  .fl-hero-wordmark {
+    font-size: 56px;
+    margin-bottom: 24px;
+  }
+  .fl-hero-statement {
+    font-size: 18px;
+    margin-bottom: 40px;
+  }
+  .fl-hero-meta {
+    gap: 28px;
+  }
+  .fl-section {
+    padding: 64px 0;
+  }
+  .fl-section-eyebrow {
+    margin-bottom: 24px;
+  }
+  .fl-philosophy-grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+  .fl-philosophy-title {
+    font-size: 30px;
+  }
+  .fl-work-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  .fl-card {
+    padding: 24px;
+  }
+  .fl-product-number {
+    font-size: 36px;
+  }
+  .fl-contact-content {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+  .fl-contact-line {
+    font-size: 22px;
+  }
+}
