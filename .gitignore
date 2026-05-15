@@ -43,3 +43,7 @@ next-env.d.ts
 # local design exports — track the raw drops but keep the per-export
 # CLAUDE.md out (it's a stub meant for the repo root, not the archive)
 /Claude_Design/**/CLAUDE.md
+
+# CLAUDE.md (root) — local-only brand/design log, contains sensitive info,
+# re-uploaded to claude.ai Project knowledge by hand. Never commit.
+/CLAUDE.md
