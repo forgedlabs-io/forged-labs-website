@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 /*
  * Forged Labs — landing page
  *
@@ -207,6 +209,17 @@ export default function Home() {
         {/* === FOOTER === */}
         <footer className="fl-footer">
           <div className="fl-footer-mark">forged labs</div>
+          <nav className="fl-footer-links" aria-label="Legal">
+            <Link href="/privacy" className="fl-footer-link">
+              Privacy
+            </Link>
+            <span className="fl-footer-divider" aria-hidden="true">
+              ·
+            </span>
+            <Link href="/terms" className="fl-footer-link">
+              Terms
+            </Link>
+          </nav>
           <div className="fl-footer-legal">
             © 2026 Forged Labs LLC · All rights reserved
           </div>

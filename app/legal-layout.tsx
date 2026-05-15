@@ -18,7 +18,7 @@ export function LegalLayout({
     <main className="fl-legal-main">
       <div className="fl-legal-container">
         <Link href="/" className="fl-legal-back">
-          ← forged labs
+          &larr; forged labs
         </Link>
 
         <header className="fl-legal-header">
@@ -38,7 +38,7 @@ export function LegalLayout({
             .
           </p>
           <p className="fl-legal-fineprint">
-            © 2026 Forged Labs LLC · All rights reserved
+            &copy; 2026 Forged Labs LLC &middot; All rights reserved
           </p>
         </footer>
       </div>
