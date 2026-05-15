@@ -1,65 +1,217 @@
-import Image from "next/image";
+/*
+ * Forged Labs — landing page
+ *
+ * Single direction: Obsidian & Sapphire (dark near-black + sapphire blue).
+ * Copy is locked per CLAUDE.md — do not change without updating both the
+ * file and chat-Claude's project knowledge.
+ *
+ * All styles live in app/globals.css under the `.fl-*` namespace.
+ */
 
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            Forged Labs — under construction.
+    <div className="fl-root">
+      <div className="fl-container">
+        {/* === MASTHEAD === */}
+        <nav className="fl-nav">
+          <div className="fl-nav-mark">forged labs</div>
+          <div className="fl-nav-meta">Est. 2026 · TX</div>
+        </nav>
+
+        {/* === HERO === */}
+        <section className="fl-hero">
+          <div className="fl-hero-eyebrow">
+            <span className="fl-eb-rule" />A software studio for individuals
+            and industry
+          </div>
+          <h1 className="fl-hero-wordmark">
+            Built for the
+            <br />
+            <span className="fl-accent-word">long</span> game.
           </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
+          <p className="fl-hero-statement">
+            We make software for two kinds of work — the patient work of a
+            life, and the careful work of industry. Both built to last.
           </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
+          <div className="fl-hero-meta">
+            <div className="fl-meta-block">
+              <div className="fl-meta-label">Studio</div>
+              <div className="fl-meta-value">League City, Texas</div>
+            </div>
+            <div className="fl-meta-block">
+              <div className="fl-meta-label">Status</div>
+              <div className="fl-meta-value">Active · Pre-launch</div>
+            </div>
+            <div className="fl-meta-block">
+              <div className="fl-meta-label">Founded</div>
+              <div className="fl-meta-value">2026</div>
+            </div>
+          </div>
+        </section>
+
+        {/* === PHILOSOPHY === */}
+        <section className="fl-section">
+          <div className="fl-section-eyebrow">
+            <span className="fl-eb-rule" />
+            <span className="fl-section-number">01</span>
+            Philosophy
+          </div>
+          <div className="fl-philosophy-grid">
+            <h2 className="fl-philosophy-title">
+              Consistency
+              <br />
+              <em>is the engine.</em>
+            </h2>
+            <div className="fl-philosophy-body">
+              <p>
+                We build software for two kinds of work — the daily practice
+                of becoming who you said you&rsquo;d be, and the careful work
+                of industry, where that same drive is what makes the work
+                right. Both reward patience, both punish shortcuts, both
+                compound over the years.
+              </p>
+              <p>
+                The technology industry sells hype and quick wins.
+                We&rsquo;re not interested in that. Our products are designed
+                to be used for years, not weeks. Slips and setbacks treated
+                as signal, not collapse.{" "}
+                <strong>Pick it back up, keep going.</strong>
+              </p>
+              <p>
+                That&rsquo;s how we built the studio. That&rsquo;s how we
+                build our products.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        {/* === TWO KINDS OF WORK === */}
+        <section className="fl-section">
+          <div className="fl-section-eyebrow">
+            <span className="fl-eb-rule" />
+            <span className="fl-section-number">02</span>
+            Two kinds of work
+          </div>
+          <p className="fl-work-intro">
+            One product at a time, built carefully, shipped when it&rsquo;s
+            ready.
+          </p>
+
+          <div className="fl-work-grid">
+            {/* PERSONAL */}
+            <div className="fl-work-column">
+              <div className="fl-work-label">Personal</div>
+              <p className="fl-work-blurb">
+                Apps for individuals who value consistency over hype.
+              </p>
+              <div className="fl-card">
+                <div className="fl-product-number">001</div>
+                <div className="fl-product-name">A E V Y N</div>
+                <p className="fl-product-description">
+                  A daily discipline app organized around five pillars —
+                  Spirit, Mind, Body, Craft, and Life. For the long game.
+                </p>
+                <div className="fl-product-meta-row">
+                  <div className="fl-product-status">
+                    <span className="fl-status-dot" />
+                    In development
+                  </div>
+                  <a href="https://aevyn.io" className="fl-product-link">
+                    Visit <span className="fl-arrow">→</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            {/* INDUSTRIAL */}
+            <div className="fl-work-column">
+              <div className="fl-work-label">Industrial</div>
+              <p className="fl-work-blurb">
+                Software for industrial shops, where the work has to be right.
+              </p>
+              <div className="fl-card fl-card-placeholder">
+                <div className="fl-product-number">002</div>
+                <div className="fl-product-name fl-product-name-muted">
+                  In the forge
+                </div>
+                <p className="fl-product-description fl-product-description-muted">
+                  Coming 2026.
+                </p>
+                <div className="fl-product-meta-row">
+                  <div className="fl-product-status fl-product-status-muted">
+                    <span className="fl-status-dot" />
+                    Pre-development
+                  </div>
+                  <span />
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className="fl-future-marker">More in the forge.</div>
+        </section>
+
+        {/* === CONTACT === */}
+        <section className="fl-section" id="contact">
+          <div className="fl-section-eyebrow">
+            <span className="fl-eb-rule" />
+            <span className="fl-section-number">03</span>
+            Get in touch
+          </div>
+          <div className="fl-contact-content">
+            <p className="fl-contact-line">
+              For press, partnerships, or{" "}
+              <span className="fl-accent-word-inline">
+                a careful conversation
+              </span>{" "}
+              about the work.
+            </p>
+            <div className="fl-contact-info">
+              <div className="fl-contact-block">
+                <div className="fl-contact-label">General</div>
+                <a
+                  href="mailto:hello@forgedlabs.io"
+                  className="fl-contact-value"
+                >
+                  hello@forgedlabs.io
+                </a>
+              </div>
+              <div className="fl-contact-block">
+                <div className="fl-contact-label">Press</div>
+                <a
+                  href="mailto:hello@forgedlabs.io?subject=Press%20inquiry"
+                  className="fl-contact-value"
+                >
+                  hello@forgedlabs.io
+                </a>
+              </div>
+              <div className="fl-contact-block">
+                <div className="fl-contact-label">Legal</div>
+                <a
+                  href="mailto:legal@forgedlabs.io"
+                  className="fl-contact-value"
+                >
+                  legal@forgedlabs.io
+                </a>
+              </div>
+              <div className="fl-contact-block">
+                <div className="fl-contact-label">Location</div>
+                <div className="fl-contact-value">
+                  League City, Texas · United States
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* === FOOTER === */}
+        <footer className="fl-footer">
+          <div className="fl-footer-mark">forged labs</div>
+          <div className="fl-footer-legal">
+            © 2026 Forged Labs LLC · All rights reserved
+          </div>
+        </footer>
+      </div>
     </div>
   );
 }
