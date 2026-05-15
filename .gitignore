@@ -39,3 +39,6 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# local design exports (raw drops from Claude design — not for repo)
+/Claude_Design/
