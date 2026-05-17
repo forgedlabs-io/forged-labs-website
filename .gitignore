@@ -47,3 +47,6 @@ next-env.d.ts
 # CLAUDE.md (root) — local-only brand/design log, contains sensitive info,
 # re-uploaded to claude.ai Project knowledge by hand. Never commit.
 /CLAUDE.md
+
+# Claude Code agent state - local only, never commit
+.claude/
