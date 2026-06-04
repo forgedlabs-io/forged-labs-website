@@ -597,6 +597,42 @@ a.fl-contact-value:hover {
   font-weight: 500;
 }
 
+.fl-legal-section ul {
+  list-style: none;
+  margin: 0 0 16px;
+  padding: 0;
+}
+
+.fl-legal-section li {
+  position: relative;
+  font-size: 15px;
+  line-height: 1.75;
+  color: var(--fl-text-secondary);
+  padding-left: 22px;
+  margin-bottom: 10px;
+}
+
+.fl-legal-section li:last-child {
+  margin-bottom: 0;
+}
+
+.fl-legal-section li::before {
+  content: "";
+  position: absolute;
+  left: 2px;
+  top: 11px;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--fl-accent);
+  opacity: 0.6;
+}
+
+/* Lead-in line introducing a list (e.g. a bolded label above bullets) */
+.fl-legal-lead {
+  margin-bottom: 12px;
+}
+
 .fl-legal-link {
   color: var(--fl-accent);
   text-decoration: none;
